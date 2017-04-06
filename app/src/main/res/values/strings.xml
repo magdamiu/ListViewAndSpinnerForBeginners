@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ListView And Spinner For Beginners</string>
+    <string name="spinner">Spinner</string>
+    <string name="listview">ListView</string>
+</resources>
