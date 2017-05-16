@@ -1,6 +1,7 @@
 package com.magdamiu.listviewandspinnerforbeginners.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.magdamiu.listviewandspinnerforbeginners.PermissionInActivity;
 import com.magdamiu.listviewandspinnerforbeginners.R;
 import com.magdamiu.listviewandspinnerforbeginners.model.Company;
 
@@ -71,6 +73,7 @@ public class CompanyAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "The item from the position " + currentPosition + " was clicked!", Toast.LENGTH_SHORT).show();
+                mContext.startActivity(new Intent(mContext, PermissionInActivity.class));
             }
         });
 
