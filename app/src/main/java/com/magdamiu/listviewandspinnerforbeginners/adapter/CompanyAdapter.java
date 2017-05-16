@@ -58,11 +58,9 @@ public class CompanyAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            viewHolder = new ViewHolder();
             int layoutId = R.layout.company_item;
             view = layoutInflater.inflate(layoutId, parent, false);
-            viewHolder.mNameTextView = (TextView) view.findViewById(R.id.tv_name);
-            viewHolder.mAddressTextView = (TextView) view.findViewById(R.id.tv_address);
+            viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
         } else {
             view = convertView;
@@ -87,5 +85,10 @@ public class CompanyAdapter extends BaseAdapter {
     class ViewHolder {
         protected TextView mNameTextView;
         protected TextView mAddressTextView;
+
+        public ViewHolder(View view){
+            mNameTextView = (TextView) view.findViewById(R.id.tv_name);
+            mAddressTextView = (TextView) view.findViewById(R.id.tv_address);
+        }
     }
 }
